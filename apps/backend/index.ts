@@ -9,30 +9,35 @@ app.use(express.json());
 app.use(cors());
 
 
-app.post("buy", middleware, (req, res) => {
+app.post("/buy", middleware, (req, res) => {
+  res.json({
+    message: "Hi",
+  });
+});
 
-})
+app.post("/sell", middleware, (req, res) => {
+  res.json({ message: "Sell route" });
+});
 
-app.post("sell",middleware, (req, res) => {
+app.post("/split", middleware, (req, res) => {
+  res.json({ message: "Split route" });
+});
 
-})
+app.post("/merge", middleware, (req, res) => {
+  res.json({ message: "Merge route" });
+});
 
-app.post("split",middleware, (req, res) => {
-,
-})
+app.get("/balance", middleware, (req, res) => {
+  res.json({ message: "Balance route" });
+});
 
-app.post("merge",middleware, (req, res) => {
+app.get("/position", middleware, (req, res) => {
+  res.json({ message: "Position route" });
+});
 
-})
+app.get("/history", middleware, (req, res) => {
+  res.json({ message: "History route" });
+});
 
-app.get("balance",middleware, (req, res) => {
 
-})
-
-app.get("position",middleware, (req, res) => {
-
-})
-
-app.get("history",middleware, (req, res) => {
-
-})
+app.listen(3000);
